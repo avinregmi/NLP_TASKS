@@ -10,3 +10,13 @@ The situation for *Recurrent Neural Networks* that output sequences is very si
 ![](https://miro.medium.com/max/36/1*U3d8D_GnfW13Y3nDgvwJSw.png?q=20)
 
 ![](https://miro.medium.com/max/421/1*U3d8D_GnfW13Y3nDgvwJSw.png)
+
+## Pros and Cons of Teacher Forcing
+
+## Pros:
+
+Training with *Teacher Forcing *converges faster. At the early stages of training, the predictions of the model are very bad. If we do not use *Teacher Forcing*, the hidden states of the model will be updated by a sequence of wrong predictions, errors will accumulate, and it is difficult for the model to learn from that.
+
+## Cons:
+
+During inference, since there is usually no ground truth available, the RNN model will need to feed its own previous prediction back to itself for the next prediction. Therefore there is a discrepancy between training and inference, and this might lead to poor model performance and instability. This is known as *Exposure Bias* in literature.
